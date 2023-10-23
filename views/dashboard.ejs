@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+
+    <title>Dashboard</title>
+</head>
+<body>
+
+    <a href='/users/logout'>Logout</a>
+    
+    <h1>Hello <%= user.charAt(0).toUpperCase() + user.slice(1) %>, you are now logged in as a seeker</h1>
+<form action="/users/dashboard" method="GET">
+  <input type="text" name="location" placeholder="Location">
+  <input type="text" name="type" placeholder="Type">
+  <input type="number" name="minSalary" placeholder="Min Salary">
+  <input type="number" name="maxSalary" placeholder="Max Salary">
+  <input type="submit" value="Search">
+</form>
+
+<!-- Display the job information -->
+<ul>
+  <% jobinfo.forEach(job => { %>
+    <li>Location: <%= job.location %>, Type: <%= job.type %>, Salary: <%= job.salary %></li>
+  <% }) %>
+</ul>
+
+</body>
+</html>

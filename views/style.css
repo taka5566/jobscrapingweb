@@ -1,0 +1,28 @@
+/* style.css */
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container Styles */
+.welContainer,
+.loginContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 50px;
+}
+.loginContainer a{
+   font-size: 500px;
+}
+.centerContent {
+  text-align: center;
+}
+
+h1{
+    font-size:500px;
+}

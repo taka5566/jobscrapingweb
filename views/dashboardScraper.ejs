@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+
+    <title>Dashboard</title>
+</head>
+    <ul>
+       <% if(typeof errors != 'undefined') {  %>
+       <% errors.forEach(error=>{ %>
+       <li><%= error.message %></li>
+        <% }) %>  <% } %>
+         
+        
+
+       
+    </ul>
+        <ul>
+    <% if(messages.success_msg) { %>
+      <li><%= messages.success_msg %></li>
+      <% } %>
+    </ul>
+<body>
+
+    <a href='/users/logout'>Logout</a>
+    <h1>Hello <%= user.charAt(0).toUpperCase() + user.slice(1) %>, you are now logged in as a scraper</h1>
+    <h2>Job Information</h2>
+    <table>
+
+        <tbody>
+
+                        <form action="/users/dashboardScraper" method="POST">
+
+                            <input type="text" name="location" placeholder="location" required>
+                            <input type="text" name="type" placeholder="type" required>
+                            <input type="text" name="salary" placeholder="salary" required>
+                            <input type="submit" value="Update">
+                        </form>
+
+        </tbody>
+    </table>
+
+</body>
+</html>
